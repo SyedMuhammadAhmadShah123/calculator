@@ -11,17 +11,33 @@
     <body>
         <div class="container">
             <div class="calculator">
-                <form >
-                    <input type="text">
-                </form>
-                <div class="calculator-body">
-                    <button>AC</button>
-                    <button></button><button></button><button></button><button></button><button></button><button></button><button></button><button></button><button></button><button></button><button></button><button></button><button></button><button></button><button></button><button></button><button></button><button></button>
-                </div>
+                    <div class="calculator__display">0</div>
+                    <hr>
+                    <div class="calculatorBody">
+                        <!-- <button   class="calculatorBody__button ">AC</button>
+                        <button   class="calculatorBody__button ">+-</button>
+                        <button   class="calculatorBody__button ">%</button> -->
+                        <button   data-type="number" class="calculatorBody__button ">7</button>
+                        <button   data-type="number" class="calculatorBody__button ">8</button>
+                        <button   data-type="number" class="calculatorBody__button ">9</button>
+                        <button   data-key="divide" data-type="operator" class="calculatorBody__button calculatorBody__button--fontColor">÷</button>
+                        <button   data-type="number" class="calculatorBody__button ">4</button>
+                        <button   data-type="number" class="calculatorBody__button ">5</button>
+                        <button   data-type="number" class="calculatorBody__button ">6</button>
+                        <button   data-key="multiply" data-type="operator" class="calculatorBody__button calculatorBody__button--fontColor">×</button>
+                        <button   data-type="number" class="calculatorBody__button ">1</button>
+                        <button   data-type="number" class="calculatorBody__button ">2</button>
+                        <button   data-type="number" class="calculatorBody__button ">3</button>
+                        <button   data-key="minus" data-type="operator" class="calculatorBody__button calculatorBody__button--fontColor">-</button>
+                        <button   data-type="number" class="calculatorBody__button ">0</button>
+                        <!-- <button   class="calculatorBody__button ">.</button> -->
+                        <button   data-type="equal" class="calculatorBody__button calculatorBody__button--width">=</button>
+                        <button   data-key="plus" data-type="operator" class="calculatorBody__button calculatorBody__button--fontColor">+</button>
+                    </div>
             </div>
 
         </div>
 
-
+        <script src="script.js"></script>
     </body>
 </html>
