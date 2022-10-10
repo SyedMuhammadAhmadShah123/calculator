@@ -45,6 +45,7 @@ keys.addEventListener('click', event =>{
         if(operator==='minus') result = firstNumber - secondNumber
         if(operator==='multiply') result = firstNumber * secondNumber
         if(operator==='divide') result = firstNumber / secondNumber
+        if(operator==='mod') result = firstNumber % secondNumber
         display.textContent = result
         
     }

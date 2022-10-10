@@ -71,12 +71,12 @@ background-color: var(--color-orange);
 color: white;
 cursor: pointer;
 }
-.calculatorBody__button--fontColor:focus{
+/* .calculatorBody__button--fontColor:focus{
 background-color: var(--color-orange);
 color: white;
 border: 2px solid var(--color-black);
 
-}
+} */
 @media (max-width:425px) {
 .calculator{
     width: 90%;

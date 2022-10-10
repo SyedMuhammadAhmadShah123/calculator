@@ -11,33 +11,57 @@
     <body>
         <div class="container">
             <div class="calculator">
-                    <div class="calculator__display">0</div>
+                    <div class="calculator__display" id="calculator__display">0</div>
                     <hr>
                     <div class="calculatorBody">
-                        <button   class="calculatorBody__button ">AC</button>
-                        <button   class="calculatorBody__button "><img width="30rem" src="/Assets/icons/delete.png" alt=""></button>
-                        <button   class="calculatorBody__button ">%</button>
-                        <button   data-key="divide" data-type="operator" class="calculatorBody__button calculatorBody__button--fontColor">÷</button>
-                        <button   data-type="number" class="calculatorBody__button ">7</button>
-                        <button   data-type="number" class="calculatorBody__button ">8</button>
-                        <button   data-type="number" class="calculatorBody__button ">9</button>
-                        <button   data-key="multiply" data-type="operator" class="calculatorBody__button calculatorBody__button--fontColor">×</button>
-                        <button   data-type="number" class="calculatorBody__button ">4</button>
-                        <button   data-type="number" class="calculatorBody__button ">5</button>
-                        <button   data-type="number" class="calculatorBody__button ">6</button>
-                        <button   data-key="minus" data-type="operator" class="calculatorBody__button calculatorBody__button--fontColor">-</button>
-                        <button   data-type="number" class="calculatorBody__button ">1</button>
-                        <button   data-type="number" class="calculatorBody__button ">2</button>
-                        <button   data-type="number" class="calculatorBody__button ">3</button>
-                        <button   data-key="plus" data-type="operator" class="calculatorBody__button calculatorBody__button--fontColor">+</button>
-                        <button   class="calculatorBody__button ">.</button>
-                        <button   data-type="number" class="calculatorBody__button ">0</button>
-                        <button   data-type="equal" class="calculatorBody__button calculatorBody__button--width">=</button>
+                        <button  onclick="Clear()" data-type="number" class="calculatorBody__button ">AC</button>
+                        <button  onclick="del()" data-type="operator" data-key="del" class="calculatorBody__button "><img width="25rem" src="/Assets/icons/delete.png" alt=""></button>
+                        <button  onclick="display('%')" data-type="operator" data-key="mod" class="calculatorBody__button ">%</button>
+                        <button  onclick="display('/')" data-key="divide" data-type="operator" class="calculatorBody__button calculatorBody__button--fontColor">÷</button>
+                        <button  onclick="display('7')" data-type="number" class="calculatorBody__button ">7</button>
+                        <button  onclick="display('8')" data-type="number" class="calculatorBody__button ">8</button>
+                        <button  onclick="display('9')" data-type="number" class="calculatorBody__button ">9</button>
+                        <button  onclick="display('*')" data-key="multiply" data-type="operator" class="calculatorBody__button calculatorBody__button--fontColor">×</button>
+                        <button  onclick="display('4')" data-type="number" class="calculatorBody__button ">4</button>
+                        <button  onclick="display('5')" data-type="number" class="calculatorBody__button ">5</button>
+                        <button  onclick="display('6')" data-type="number" class="calculatorBody__button ">6</button>
+                        <button  onclick="display('-')" data-key="minus" data-type="operator" class="calculatorBody__button calculatorBody__button--fontColor">-</button>
+                        <button  onclick="display('1')" data-type="number" class="calculatorBody__button ">1</button>
+                        <button  onclick="display('2')" data-type="number" class="calculatorBody__button ">2</button>
+                        <button  onclick="display('3')" data-type="number" class="calculatorBody__button ">3</button>
+                        <button  onclick="display('+')" data-key="plus" data-type="operator" class="calculatorBody__button calculatorBody__button--fontColor">+</button>
+                        <button  onclick="display('.')" data-type="number" class="calculatorBody__button ">.</button>
+                        <button  onclick="display('0')" data-type="number" class="calculatorBody__button ">0</button>
+                        <button  onclick="Calculate()" data-type="equal" class="calculatorBody__button calculatorBody__button--width">=</button>
                     </div>
             </div>
 
         </div>
+        <script>
+            let outputScreen = document.getElementById("calculator__display")
 
-        <script src="script.js"></script>
+            function display(num){
+                outputScreen.innerHTML += num
+            }
+            function Calculate(num){
+                try{
+                    outputScreen.innerHTML = eval(outputScreen.innerHTML)
+                }
+                catch(err){
+                    alert("Invalid Input")
+                }
+            }
+            function Clear(){
+                outputScreen.innerHTML="0"
+            }
+            function del(){
+                if(outputScreen.innerHTML!=0){
+                outputScreen.innerHTML = outputScreen.innerHTML.slice(0,-1)
+
+                }
+            }
+        </script>
+
+        <!-- <script src="script.js"></script> -->
     </body>
 </html>
