@@ -40,8 +40,14 @@
         <script>
             let outputScreen = document.getElementById("calculator__display")
 
+            let count = 0;
             function display(num){
-                outputScreen.innerHTML += num
+                // console.log(count)
+                if(count < 22){
+                    outputScreen.innerHTML += num
+                    count++
+                    // console.log(count)
+                }
             }
             function Calculate(num){
                 try{
